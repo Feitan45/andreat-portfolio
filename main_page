@@ -1,0 +1,63 @@
+export default function Portfolio() {
+  return (
+    <div className="min-h-screen bg-white text-gray-900 font-sans">
+      {/* Header */}
+      <header className="flex justify-between items-center px-8 py-6 border-b border-gray-200">
+        <h1 className="text-2xl font-bold tracking-tight">Your Name</h1>
+        <nav className="space-x-6 text-sm font-medium">
+          <a href="#projects" className="hover:text-gray-500">Projects</a>
+          <a href="#about" className="hover:text-gray-500">About</a>
+        </nav>
+      </header>
+
+      {/* Hero Section */}
+      <section className="px-8 py-20 text-center max-w-3xl mx-auto">
+        <h2 className="text-4xl font-semibold mb-4">UX/UI Designer</h2>
+        <p className="text-gray-600 text-lg">
+          Designing clean, human-centered interfaces with 1-3 years of experience.
+        </p>
+      </section>
+
+      {/* Projects Section */}
+      <section id="projects" className="px-8 py-16 max-w-6xl mx-auto">
+        <h3 className="text-2xl font-semibold mb-10 text-center">Projects</h3>
+        <div className="grid md:grid-cols-3 gap-8">
+          {[1, 2, 3].map((i) => (
+            <div key={i} className="rounded-2xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition">
+              <div className="h-48 bg-gray-100 flex items-center justify-center text-gray-400">
+                Project Image
+              </div>
+              <div className="p-6">
+                <h4 className="text-lg font-semibold mb-2">Project Title {i}</h4>
+                <p className="text-sm text-gray-600">
+                  Short description of the project, tools used, and design goals.
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="px-8 py-20 bg-gray-50">
+        <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+          <div className="rounded-full bg-gray-200 h-48 w-48 mx-auto md:mx-0"></div>
+          <div>
+            <h3 className="text-2xl font-semibold mb-4">About Me</h3>
+            <p className="text-gray-600 leading-relaxed mb-4">
+              I’m a UX/UI designer with a passion for minimalism and clarity. With 1-3 years of hands-on experience, I focus on crafting interfaces that feel intuitive and human-centered.
+            </p>
+            <p className="text-gray-600 leading-relaxed">
+              Skilled in Figma, Sketch, and Adobe XD. I enjoy collaborating with developers and product teams to bring ideas to life.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="px-8 py-6 text-center text-sm text-gray-500 border-t border-gray-200">
+        © {new Date().getFullYear()} Your Name. All rights reserved.
+      </footer>
+    </div>
+  );
+}
