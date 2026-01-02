@@ -210,5 +210,192 @@ p {
 .hero-inner {
   display: grid;
   gap: 2rem;
-  align-items: cente
+  align-items: center;
+}
+
+.hero-visual {
+  display: grid;
+  place-items: center;
+}
+
+.visual-placeholder {
+  width: min(420px, 100%);
+  aspect-ratio: 1 / 1;
+  border: 2px dashed #aaa;
+  border-radius: 1rem;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 1rem;
+  color: #444;
+}
+
+@media (min-width: 900px) {
+  .hero-inner {
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 3rem;
+  }
+}
+
+/* ====== About ====== */
+.about-highlights {
+  margin: 1rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.about-highlights li {
+  margin: 0.4rem 0;
+}
+
+/* ====== Projects (two columns with invert hover + arrow) ====== */
+.projects {
+  background: #0f0f0f;
+  color: #fff;
+}
+
+.project-grid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .project-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+}
+
+.project-card {
+  background: #fff;
+  color: #111;
+  border-radius: 1rem;
+  border: 2px solid #fff;
+  min-height: 240px;
+  transition: transform 180ms ease, background 180ms ease, color 180ms ease, border-color 180ms ease;
+}
+
+.project-card-inner {
+  height: 100%;
+  padding: 1.5rem;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  position: relative;
+}
+
+.project-title {
+  margin: 0 0 0.75rem;
+  display: inline-block;
+  padding-bottom: 0.35rem;
+  border-bottom: 2px solid #111; /* underline */
+  font-size: 1.6rem;
+}
+
+.project-desc {
+  margin: 0;
+  max-width: 55ch;
+  color: #222;
+}
+
+/* Arrow appears on hover */
+.project-arrow {
+  position: absolute;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  font-size: 1.75rem;
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+/* Hover invert */
+.project-card:hover,
+.project-card:focus-visible {
+  background: #111;
+  color: #fff;
+  border-color: #fff;
+  transform: translateY(-2px);
+}
+
+.project-card:hover .project-title,
+.project-card:focus-visible .project-title {
+  border-bottom-color: #fff;
+}
+
+.project-card:hover .project-desc,
+.project-card:focus-visible .project-desc {
+  color: #f0f0f0;
+}
+
+.project-card:hover .project-arrow,
+.project-card:focus-visible .project-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Reduce motion preference */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  .project-card,
+  .project-arrow {
+    transition: none;
+  }
+}
+
+/* ====== Contact ====== */
+.contact-form {
+  margin-top: 1.25rem;
+  max-width: 620px;
+}
+
+.field {
+  display: grid;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+}
+
+label {
+  font-weight: 700;
+}
+
+input,
+textarea {
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  font: inherit;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #111;
+}
+
+.form-note {
+  margin-top: 0.75rem;
+  min-height: 1.2em;
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.contact-links a {
+  border-bottom: 1px solid currentColor;
+}
+.contact-links a:hover {
+  border-bottom-width: 2px;
+}
+
+/* ====== Footer ====== */
+.site-footer {
+  border-top: 1px solid #eee;
+  padding: 1.5rem 0;
+}
+
 
