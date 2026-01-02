@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Your Name — Product Designer / Developer</title>
+  <meta name="description" content="Personal portfolio of Your Name: selected projects, background, and contact information." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://YOUR_GITHUB_USERNAME.github.io/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Your Name — Portfolio" />
+  <meta property="og:description" content="Selected projects, background, and contact." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://YOUR_GITHUB_USERNAME.github.io/" />
+  <!-- If you add a real image later, update this: -->
+  <meta property="og:image" content="https://YOUR_GITHUB_USERNAME.github.io/og-image.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preload" href="styles.css" as="style" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:,">
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="Go to Home">
+        <span class="brand-mark" aria-hidden="true">◆</span>
+        <span class="brand-text">Your Name</span>
+      </a>
+
+      <button class="nav-toggle" type="button"
+        aria-expanded="false" aria-controls="site-nav">
+        <span class="sr-only">Open menu</span>
+        <span aria-hidden="true">☰</span>
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li>
+            <a class="btn btn-small" href="#contact">Hire / Collaborate</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="site-main" tabindex="-1">
+    <!-- Home -->
+    <section id="home" class="section hero" aria-labelledby="home-title">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <h1 id="home-title">I build thoughtful, usable digital products.</h1>
+          <p class="lead">
+            I’m <strong>Your Name</strong>, a product designer/developer focused on clean UX, accessible UI, and shippable prototypes.
+          </p>
+
+          <div class="hero-cta">
+            <a class="btn" href="#projects">See projects</a>
+            <a class="btn btn-ghost" href="#contact">Contact me</a>
+          </div>
+
+          <ul class="quick-facts" aria-label="Highlights">
+            <li><strong>Focus:</strong> UX/UI, prototyping, frontend</li>
+            <li><strong>Tools:</strong> Figma, HTML/CSS/JS, React</li>
+            <li><strong>Location:</strong> Bay Area / Remote</li>
+          </ul>
+        </div>
+
+        <figure class="hero-card" aria-label="Profile">
+          <!-- Replace with your actual headshot later -->
+          <div class="avatar" role="img" aria-label="Portrait of Your Name"></div>
+          <figcaption class="muted">
+            Currently exploring human-centered AI + design systems.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section" aria-labelledby="about-title">
+      <div class="container">
+        <h2 id="about-title">About</h2>
+
+        <div class="two-col">
+          <div>
+            <p>
+              I design and build experiences that feel effortless: clear information architecture, accessible components,
+              and strong “why” behind every interaction.
+            </p>
+            <p>
+              I’m especially interested in AI-assisted workflows, healthcare/caregiving tools, and products that reduce
+              cognitive load for busy people.
+            </p>
+
+            <ul class="bullets">
+              <li>Strengths: user research → synthesis → prototypes → iteration</li>
+              <li>Comfortable collaborating with engineering + stakeholders</li>
+              <li>Documentation-first: decisions, tradeoffs, and constraints</li>
+            </ul>
+          </div>
+
+          <aside class="card" aria-label="Skills and links">
+            <h3 class="card-title">Skills</h3>
+            <ul class="pill-list">
+              <li>UX Research</li>
+              <li>Wireframing</li>
+              <li>Prototyping</li>
+              <li>Design Systems</li>
+              <li>Accessibility</li>
+              <li>Frontend</li>
+            </ul>
+
+            <div class="divider" role="separator"></div>
+
+            <h3 class="card-title">Links</h3>
+            <ul class="link-list">
+              <li><a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank" rel="noreferrer">GitHub</a></li>
+              <li><a href="https://www.linkedin.com/in/YOUR_HANDLE" target="_blank" rel="noreferrer">LinkedIn</a></li>
+              <li><a href="mailto:you@example.com">you@example.com</a></li>
+              <!-- Add resume later -->
+              <li><a href="#" aria-disabled="true" class="disabled">Resume (add PDF)</a></li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section" aria-labelledby="projects-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="projects-title">Projects</h2>
+          <p class="muted">
+            A few selected projects. Replace titles/descriptions with your case studies.
+          </p>
+        </div>
+
+        <div class="projects-grid" role="list">
+          <!-- Project Card 1 -->
+          <article class="project-card" role="listitem">
+            <div class="project-media" role="img" aria-label="Screenshot placeholder for Project One"></div>
+            <div class="project-body">
+              <h3 class="project-title">Project One — AI-assisted journaling</h3>
+              <p class="project-desc">
+                Designed a voice-first journaling flow with transcription + edit controls to reduce caregiver friction.
+              </p>
+              <ul class="project-tags" aria-label="Project tags">
+                <li>UX/UI</li><li>Voice</li><li>Prototype</li>
+              </ul>
+              <div class="project-links">
+                <a href="#" class="btn btn-small btn-ghost" aria-disabled="true">Case study</a>
+                <a href="#" class="btn btn-small" aria-disabled="true">Live demo</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project Card 2 -->
+          <article class="project-card" role="listitem">
+            <div class="project-media" role="img" aria-label="Screenshot placeholder for Project Two"></div>
+            <div class="project-body">
+              <h3 class="project-title">Project Two — Accessibility redesign</h3>
+              <p class="project-desc">
+                Audited WCAG issues, improved color contrast, keyboard navigation, and information hierarchy.
+              </p>
+              <ul class="project-tags" aria-label="Project tags">
+                <li>Accessibility</li><li>Design System</li><li>IA</li>
+              </ul>
+              <div class="project-links">
+                <a href="#" class="btn btn-small btn-ghost" aria-disabled="true">Case study</a>
+                <a href="#" class="btn btn-small" aria-disabled="true">Before/After</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project Card 3 -->
+          <article class="project-card" role="listitem">
+            <div class="project-media" role="img" aria-label="Screenshot placeholder for Project Three"></div>
+            <div class="project-body">
+              <h3 class="project-title">Project Three — Data storytelling</h3>
+              <p class="project-desc">
+                Built a clean dashboard with clear metrics, annotations, and “so what” insights for decision-making.
+              </p>
+              <ul class="project-tags" aria-label="Project tags">
+                <li>Data Viz</li><li>Frontend</li><li>Research</li>
+              </ul>
+              <div class="project-links">
+                <a href="#" class="btn btn-small btn-ghost" aria-disabled="true">Write-up</a>
+                <a href="#" class="btn btn-small" aria-disabled="true">Repo</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project Card 4 -->
+          <article class="project-card" role="listitem">
+            <div class="project-media" role="img" aria-label="Screenshot placeholder for Project Four"></div>
+            <div class="project-body">
+              <h3 class="project-title">Project Four — Website redesign</h3>
+              <p class="project-desc">
+                Mobile-first marketing site with clearer value props, faster navigation, and SEO-ready structure.
+              </p>
+              <ul class="project-tags" aria-label="Project tags">
+                <li>Web</li><li>SEO</li><li>Responsive</li>
+              </ul>
+              <div class="project-links">
+                <a href="#" class="btn btn-small btn-ghost" aria-disabled="true">Case study</a>
+                <a href="#" class="btn btn-small" aria-disabled="true">Live site</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <p class="muted note">
+          Tip: replace placeholders with real screenshots using <code>&lt;img src="..." alt="..."&gt;</code> for best accessibility + SEO.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section" aria-labelledby="contact-title">
+      <div class="container">
+        <h2 id="contact-title">Contact</h2>
+        <div class="two-col">
+          <div>
+            <p>
+              Want to collaborate or chat about a role? Send a message or email me directly.
+            </p>
+            <ul class="link-list">
+              <li><a href="mailto:you@example.com">you@example.com</a></li>
+              <li><a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank" rel="noreferrer">GitHub</a></li>
+              <li><a href="https://www.linkedin.com/in/YOUR_HANDLE" target="_blank" rel="noreferrer">LinkedIn</a></li>
+            </ul>
+          </div>
+
+          <form class="card form" aria-label="Contact form" id="contact-form">
+            <!-- Note: GitHub Pages is static, so this form uses mailto by default.
+                 See "Things to consider" below for Formspree / Netlify Forms, etc. -->
+            <div class="field">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" autocomplete="name" required />
+            </div>
+
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" required />
+            </div>
+
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+
+            <button class="btn" type="submit">Send</button>
+            <p class="muted small" id="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <small>© <span id="year"></span> Your Name. All rights reserved.</small>
+      <a href="#home">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <!-- Basic JSON-LD for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Your Name",
+    "url": "https://YOUR_GITHUB_USERNAME.github.io/",
+    "sameAs": [
+      "https://github.com/YOUR_GITHUB_USERNAME",
+      "https://www.linkedin.com/in/YOUR_HANDLE"
+    ],
+    "jobTitle": "Product Designer / Developer"
+  }
+  </script>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
