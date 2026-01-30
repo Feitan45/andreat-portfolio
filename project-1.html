@@ -1,0 +1,711 @@
+<!-- /projects/project-1.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Project 1 — AI-assisted Eldercare | Case Study</title>
+  <meta name="description" content="Case study: AI-assisted eldercare app — from research to usability testing and final screens." />
+
+  <!-- Your global site styles (optional but recommended) -->
+  <link rel="stylesheet" href="../styles.css" />
+
+  <!-- Page-specific styles (clean + accessible) -->
+  <style>
+    :root{
+      --bg: #ffffff;
+      --surface: #ffffff;
+      --muted: #6b7280;
+      --text: #111827;
+      --border: #e5e7eb;
+      --shadow: 0 10px 30px rgba(0,0,0,.08);
+
+      --radius: 16px;
+      --radius-sm: 12px;
+      --max: 1100px;
+
+      --focus: 3px solid #111827;
+    }
+
+    /* Respect user defaults + accessibility */
+    @media (prefers-reduced-motion: reduce){
+      *{ scroll-behavior: auto !important; transition: none !important; animation: none !important; }
+    }
+
+    body{
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.5;
+    }
+
+    a{ color: inherit; text-underline-offset: .2em; }
+    a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline: var(--focus); outline-offset: 3px; }
+
+    .skip-link{
+      position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden;
+    }
+    .skip-link:focus{
+      left: 16px; top: 16px; width: auto; height: auto;
+      background: var(--text); color: white;
+      padding: 10px 14px; border-radius: 999px;
+      z-index: 9999;
+    }
+
+    .container{
+      width: min(100% - 32px, var(--max));
+      margin: 0 auto;
+    }
+
+    /* Top bar */
+    .topbar{
+      border-bottom: 1px solid var(--border);
+      background: rgba(255,255,255,.9);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    .topbar-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 16px;
+      padding: 14px 0;
+    }
+    .crumbs{
+      display:flex; align-items:center; gap: 10px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .crumbs a{ color: var(--muted); text-decoration: none; }
+    .crumbs a:hover{ text-decoration: underline; }
+
+    .actions{
+      display:flex; align-items:center; gap: 10px;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: white;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      box-shadow: 0 1px 0 rgba(0,0,0,.03);
+    }
+    .btn:hover{ box-shadow: 0 6px 16px rgba(0,0,0,.08); }
+    .btn.primary{
+      background: var(--text);
+      color: white;
+      border-color: var(--text);
+    }
+
+    /* Hero */
+    .hero{
+      padding: 42px 0 22px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 24px;
+      align-items: start;
+    }
+    @media (max-width: 900px){
+      .hero-grid{ grid-template-columns: 1fr; }
+    }
+
+    .kicker{
+      display:inline-flex; align-items:center; gap: 10px;
+      font-size: 14px;
+      color: var(--muted);
+      margin: 0 0 10px;
+    }
+    .kicker .dot{
+      width: 6px; height: 6px; border-radius: 999px;
+      background: var(--text);
+      display:inline-block;
+    }
+
+    h1{
+      font-size: clamp(28px, 3.2vw, 44px);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin: 0 0 12px;
+    }
+    .subtitle{
+      font-size: 16px;
+      color: var(--muted);
+      margin: 0 0 18px;
+      max-width: 65ch;
+    }
+
+    .meta{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 12px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+      box-shadow: var(--shadow);
+    }
+    .meta dl{ margin:0; }
+    .meta dt{ font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+    .meta dd{ margin: 4px 0 0; font-weight: 650; }
+
+    .tags{
+      display:flex; flex-wrap: wrap; gap: 8px;
+      margin: 12px 0 0;
+    }
+    .tag{
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 13px;
+      color: var(--muted);
+      background: white;
+    }
+
+    /* Layout below hero */
+    .layout{
+      display:grid;
+      grid-template-columns: 280px 1fr;
+      gap: 28px;
+      padding: 20px 0 60px;
+    }
+    @media (max-width: 980px){
+      .layout{ grid-template-columns: 1fr; }
+    }
+
+    /* Table of contents */
+    .toc{
+      position: sticky;
+      top: 74px; /* below topbar */
+      align-self: start;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px;
+      background: white;
+      box-shadow: var(--shadow);
+    }
+    @media (max-width: 980px){
+      .toc{ position: static; }
+    }
+    .toc h2{
+      font-size: 14px;
+      margin: 0 0 10px;
+      letter-spacing: .02em;
+    }
+    .toc ol{
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .toc a{
+      color: var(--muted);
+      text-decoration: none;
+    }
+    .toc a:hover{ text-decoration: underline; }
+
+    /* Content sections */
+    main{ min-width: 0; }
+    section{
+      scroll-margin-top: 92px; /* for anchor jumps under sticky topbar */
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 18px 14px;
+      background: white;
+      box-shadow: var(--shadow);
+      margin-bottom: 18px;
+    }
+    section h2{
+      margin: 0 0 8px;
+      font-size: 18px;
+      letter-spacing: -0.01em;
+    }
+    .lede{
+      margin: 0 0 12px;
+      color: var(--muted);
+      max-width: 75ch;
+    }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 14px;
+    }
+    @media (max-width: 760px){
+      .grid-2{ grid-template-columns: 1fr; }
+    }
+
+    .callout{
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 14px;
+      background: #fafafa;
+    }
+    .callout h3{
+      margin: 0 0 6px;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: var(--muted);
+    }
+    .callout p, .callout ul{ margin: 0; color: var(--text); }
+    .callout ul{ padding-left: 18px; }
+
+    figure{
+      margin: 12px 0 0;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      background: #f3f4f6;
+    }
+    .img-ph{
+      height: 220px;
+      display:flex; align-items:center; justify-content:center;
+      color: var(--muted);
+      font-size: 14px;
+      padding: 16px;
+      text-align: center;
+    }
+    figcaption{
+      padding: 10px 12px;
+      font-size: 13px;
+      color: var(--muted);
+      background: white;
+      border-top: 1px solid var(--border);
+    }
+
+    .checklist{
+      margin: 0;
+      padding-left: 18px;
+      color: var(--text);
+    }
+    .checklist li{ margin: 6px 0; }
+
+    .footer-nav{
+      display:flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 18px 0 60px;
+    }
+    .footer-nav a{
+      flex: 1;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px;
+      text-decoration: none;
+      background: white;
+      box-shadow: var(--shadow);
+    }
+    .footer-nav a:hover{ box-shadow: 0 14px 40px rgba(0,0,0,.12); }
+    .footer-nav .label{ font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+    .footer-nav .title{ font-weight: 700; margin-top: 4px; }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to case study content</a>
+
+  <!-- Top bar -->
+  <header class="topbar" role="banner">
+    <div class="container topbar-inner">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a>
+        <span aria-hidden="true">/</span>
+        <a href="../index.html#projects">Projects</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">Project 1</span>
+      </nav>
+
+      <div class="actions" aria-label="Page actions">
+        <a class="btn" href="../index.html#projects">All projects</a>
+        <a class="btn primary" href="../contact.html">Hire / Collaborate</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <h1>Redacted — AI-assisted eldercare</h1>
+        <p class="subtitle">
+          [need edit] Designed an all-in-one caregiving app with task management, AI-assisted insights, and real-time monitoring, all to reduce caregiving friction.
+        </p>
+
+        <div class="tags" aria-label="Project tags">
+          <span class="tag">UI/UX</span>
+          <span class="tag">Mobile App</span>
+          <span class="tag">AI</span>
+        </div>
+      </div>
+
+      <aside class="meta" aria-label="Project overview summary">
+        <!-- <dl>
+          <dt>Project</dt>
+          <dd>AI-powered caregiving documentation system for elderly home care </dd>
+        </dl> -->
+        <dl>
+          <dt>Role</dt>
+          <dd>UX/UI Designer</dd>
+        </dl>
+        <dl>
+          <dt>Timeline</dt>
+          <dd>10 weeks</dd>
+        </dl>
+        <dl>
+          <dt>Team</dt>
+          <dd> CEO, CTO, Marketing coordinator.</dd>
+        </dl>
+        <dl>
+          <dt>Tools</dt>
+          <dd>Figma, Wordpress, Canva, Gemini, ChatGPT</dd>
+        </dl>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Content layout -->
+  <div class="container layout">
+    <!-- TOC -->
+    <nav class="toc" aria-label="Case study sections">
+      <h2>Process</h2>
+      <ol>
+        <li><a href="#overview">Project Overview</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#synthesis">Synthesis</a></li>
+        <li><a href="#ideation">Ideation / Exploration</a></li>
+        <li><a href="#ia">Information Architecture</a></li>
+        <li><a href="#final">Final Screens</a></li>
+        <li><a href="#testing">Usability Testing</a></li>
+        <li><a href="#reflection">Reflection</a></li>
+      </ol>
+    </nav>
+
+    <!-- MAIN -->
+    <main id="main" tabindex="-1">
+      <!-- 1) Project Overview -->
+      <section id="overview" aria-labelledby="h-overview">
+        <h2 id="h-overview">Project Overview</h2>
+        <p class="lede">
+          TLDR
+        </p>
+
+        <div class="grid-2">
+          <div class="callout">
+            <h3>Problem</h3>
+            <p>
+            
+              Caregivers juggle notes, group chats, and medical updates across different tools, leading to missed details and cognitive overload. 
+                
+            </p>
+              </ul>
+          </div>
+          <!-- <div class="callout">
+            <h3>Goal</h3>
+            <p>
+              Create product features that captures caring moments, organizes information, and surfaces actionable insights.
+            </p>
+          </div> -->
+          <div class="callout">
+            <h3>Constraints</h3>
+            <ul class="checklist">
+              <!-- <li>Detailed, accurate information</li> -->
+              <li>Simple UI for non-technical users</li>
+              <li>Busy, time-constrained users</li>
+            </ul>
+          </div>
+          <div class="callout">
+            <h3>Outcome</h3>
+            <ul class="checklist">
+              <li>AI-powered caregiving documentation system for elderly home care</li>
+              <li>Designed AI insights workflow</li>
+              <li>Improve detail in documentation</li>
+              <li>Simple, easy to navigate interface</li>
+              <li>Validated through usability feedback</li>
+            </ul>
+          </div>
+        </div>
+
+        <figure>
+          <div class="img-ph" role="img" aria-label="Hero mockup placeholder">
+            Add a high-quality app mockup here (PNG/JPG). Recommended: 1600px wide.
+          </div>
+          <figcaption>Hero mockup (final UI). Replace placeholder with a real screenshot.</figcaption>
+        </figure>
+      </section>
+
+      <!-- 2) Research -->
+      <section id="research" aria-labelledby="h-research">
+        <h2 id="h-research">Research</h2>
+        <p class="lede">
+          How we translated user needs into design direction.
+        </p>
+
+        <div class="grid-2">
+          <div class="callout">
+           <h3>Methods</h3>
+            <ul class="checklist">
+              <li>User interviews at UC Berkeley senior center (n=8) </li>
+              <li>Market reserch: current tools are fragmented and documented "as needed", not daily</li>
+              <li>Competitors: Caring Village, Vesta Healthcare, Amada Healthcare</li>
+            </ul>
+          </div>
+          <div class="callout">
+            <h3> Pain Points </h3>
+            <ul>
+              <li>Documentation is long, disorganizied → limited visibility for caregivers, clinicians, and families + cognitive overload</li>
+              <li>Difficulty remembering necessary tasks, such as medication schedules → Disorganization </li>
+              <li></li>
+              
+          </ul>
+            <!-- <h3> Problem</h3>
+            <ul>
+              <li>Documentation is inconsistent and disjointed → limited visibility for caregivers, clinicians, and families</li>
+              <li>Early health changes go unnoticed → unmanaged symptoms and preventable hospitalizations</li>
+              <li>Gap: no unified, AI-driven platform that turns daily notes into clinician-reviewable insights (without replacing medical judgment)</li>
+            </ul> -->
+          </div>
+
+        </div>
+        <br>
+         <div class="callout">
+          <h3>Key user quote</h3>
+          <p style="margin:0;">
+            “I use reminders for drugs and medications, notes for any side effects, and text messages for the family… it is hard to keep track of when things happened and even what happened that day… There is just too much information.”
+          </p>
+        </div>
+        
+
+        <figure>
+          <div class="img-ph" role="img" aria-label="Research artifacts placeholder">
+            Insert research artifacts (notes, interview snippets, survey summary, affinity map photo).
+          </div>
+          <figcaption>Research artifacts (keep sensitive info anonymized).</figcaption>
+        </figure>
+      </section>
+
+      <!-- 3) Synthesis -->
+      <section id="synthesis" aria-labelledby="h-synthesis">
+        <h2 id="h-synthesis">Synthesis</h2>
+        <p class="lede">
+          Convert raw inputs into clear product direction: themes, jobs-to-be-done, and prioritization.
+        </p>
+
+        <div class="grid-2">
+          <div class="callout">
+            <h3>Themes</h3>
+            <ul class="checklist">
+              <li>Fragmented tools: tasks, meds, notes spread across apps and chats</li>
+              <li>Isolation + burnout: emotional toll and lack of caregiver support</li>
+              <li>No centralized health narrative: hard to prep for doctor visits; </li>
+            </ul>
+          </div>
+          <div class="callout">
+            <h3>Design Principles</h3>
+            <ul class="checklist">
+              <li>Voice-first, not voice-only</li>
+              <li>Always editable, always clear</li>
+              <li>Surface insights with context</li>
+            </ul>
+          </div>
+        </div>
+
+        <figure>
+          <div class="img-ph" role="img" aria-label="Affinity map or synthesis diagram placeholder">
+            Add your affinity mapping / insights board screenshot here.
+          </div>
+          <figcaption>Synthesis (themes and insights driving the design decisions).</figcaption>
+        </figure>
+      </section>
+
+      <!-- 4) Ideation / Exploration -->
+      <section id="ideation" aria-labelledby="h-ideation">
+        <h2 id="h-ideation">Ideation / Exploration</h2>
+        <p class="lede">
+          Highlight divergent thinking + why you converged on the final direction.
+        </p>
+
+        <div class="grid-2">
+          <div class="callout">
+            <h3>Explored Concepts</h3>
+            <ul class="checklist">
+              <li>Voice journal with live transcript + edit</li>
+              <li>Structured “prompt cards” for care events</li>
+              <li>Insights dashboard for trend detection</li>
+            </ul>
+          </div>
+          <div class="callout">
+            <h3>Decision Rationale</h3>
+            <ul class="checklist">
+              <li>Minimized steps for capture</li>
+              <li>Improved user confidence via visual feedback</li>
+              <li>Balanced structure + flexibility</li>
+            </ul>
+          </div>
+        </div>
+
+        <figure>
+          <div class="img-ph" role="img" aria-label="Sketches or wireframes placeholder">
+            Add sketches / low-fi wireframes (2–6 panels) showing exploration.
+          </div>
+          <figcaption>Exploration (low-fi concepts → selected direction).</figcaption>
+        </figure>
+      </section>
+
+      <!-- 5) Information Architecture -->
+      <section id="ia" aria-labelledby="h-ia">
+        <h2 id="h-ia">Information Architecture</h2>
+        <p class="lede">
+          Show your system thinking: navigation, content model, and user flows.
+        </p>
+
+        <div class="grid-2">
+          <div class="callout">
+            <h3>Primary Navigation</h3>
+            <ul class="checklist">
+              <li>Home / Today</li>
+              <li>Journal</li>
+              <li>Insights</li>
+              <li>Tasks / Care plan</li>
+            </ul>
+          </div>
+          <div class="callout">
+            <h3>Core Flows</h3>
+            <ul class="checklist">
+              <li>Start voice entry → transcript → edit → save</li>
+              <li>Review entries → filter/search → share</li>
+              <li>Insights → drill down to supporting entries</li>
+            </ul>
+          </div>
+        </div>
+
+        <figure>
+          <div class="img-ph" role="img" aria-label="Site map or user flow diagram placeholder">
+            Add a sitemap / IA diagram or key user flow (ideal: 1–2 diagrams).
+          </div>
+          <figcaption>IA + flows (how users move through the experience).</figcaption>
+        </figure>
+      </section>
+
+      <!-- 6) Final Screens -->
+      <section id="final" aria-labelledby="h-final">
+        <h2 id="h-final">Final Screens</h2>
+        <p class="lede">
+          Present your strongest screens with short captions explaining the “why.” Keep it visual and scannable.
+        </p>
+
+        <div class="grid-2">
+          <figure>
+            <div class="img-ph" role="img" aria-label="Final screen placeholder: Voice journaling">
+              Final Screen 1: Voice Journaling (add screenshot)
+            </div>
+            <figcaption>Voice journaling with live transcription and clear edit affordances.</figcaption>
+          </figure>
+
+          <figure>
+            <div class="img-ph" role="img" aria-label="Final screen placeholder: Entry review">
+              Final Screen 2: Entry Review (add screenshot)
+            </div>
+            <figcaption>Review and edit entries with timestamps, tags, and quick actions.</figcaption>
+          </figure>
+
+          <figure>
+            <div class="img-ph" role="img" aria-label="Final screen placeholder: Insights">
+              Final Screen 3: AI Insights (add screenshot)
+            </div>
+            <figcaption>Insights summarize trends with transparent links back to source entries.</figcaption>
+          </figure>
+
+          <figure>
+            <div class="img-ph" role="img" aria-label="Final screen placeholder: Tasks">
+              Final Screen 4: Tasks / Care Plan (add screenshot)
+            </div>
+            <figcaption>Task tracking designed for quick updates and shared visibility.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- 7) Usability Testing -->
+      <section id="testing" aria-labelledby="h-testing">
+        <h2 id="h-testing">Usability Testing</h2>
+        <p class="lede">
+          Recruiters love this section. Be specific: what you tested, what you measured, and what you changed.
+        </p>
+
+        <div class="grid-2">
+          <div class="callout">
+            <h3>Test Plan</h3>
+            <ul class="checklist">
+              <li>Participants: n=__ (caregivers / target users)</li>
+              <li>Prototype: mid/high-fi interactive</li>
+              <li>Tasks: log entry, edit, find entry, interpret insight</li>
+            </ul>
+          </div>
+          <div class="callout">
+            <h3>Key Iterations</h3>
+            <ul class="checklist">
+              <li>Improved transcript editing visibility</li>
+              <li>Clarified save states + confirmations</li>
+              <li>Reduced cognitive load in insights layout</li>
+            </ul>
+          </div>
+        </div>
+
+        <figure>
+          <div class="img-ph" role="img" aria-label="Before-and-after iteration placeholder">
+            Add before/after screens showing iterations based on testing.
+          </div>
+          <figcaption>Testing-driven iteration (show the change and the reason).</figcaption>
+        </figure>
+      </section>
+
+      <!-- 8) Reflection -->
+      <section id="reflection" aria-labelledby="h-reflection">
+        <h2 id="h-reflection">Reflection</h2>
+        <p class="lede">
+          Close with growth + product thinking. Keep it honest, crisp, and forward-looking.
+        </p>
+
+        <div class="grid-2">
+          <div class="callout">
+            <h3>What went well</h3>
+            <ul class="checklist">
+              <li>Aligned stakeholders around clear user pain points</li>
+              <li>Designed for real constraints (hands-busy, time-poor)</li>
+              <li>Delivered implementable specs for engineering</li>
+            </ul>
+          </div>
+          <div class="callout">
+            <h3>What I’d improve next</h3>
+            <ul class="checklist">
+              <li>Expand longitudinal insights + personalization</li>
+              <li>Support collaborative care team roles</li>
+              <li>Accessibility audit + localization considerations</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer navigation (optional, but recruiter-friendly) -->
+      <div class="footer-nav" aria-label="Project navigation">
+        <a href="../index.html#projects">
+          <div class="label">Back</div>
+          <div class="title">All Projects</div>
+        </a>
+        <a href="project-2.html">
+          <div class="label">Next project</div>
+          <div class="title">Project 2 — (Your next case study)</div>
+        </a>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
