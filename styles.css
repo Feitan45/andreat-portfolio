@@ -290,7 +290,7 @@ a:hover { text-decoration: none; }
 .projects-grid {
   display: grid;
   gap: 1rem;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(3, 1fr);
   margin-top: 1rem;
 }
 
@@ -336,11 +336,20 @@ a:hover { text-decoration: none; }
   background: #fafafa;
 }
 
-.project-links {
+.project-link {
+  text-decoration:none;
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
 }
+.project-card a {
+  text-decoration: none;
+}
+
+.project-card a:hover {
+  text-decoration: none;
+}
+
 
 /* =========
    Form
@@ -376,4 +385,8 @@ input:focus-visible, textarea:focus-visible {
   justify-content: space-between;
   gap: 1rem;
   flex-wrap: wrap;
+}
+
+.span-full {
+  grid-column: 1 / -1;
 }
