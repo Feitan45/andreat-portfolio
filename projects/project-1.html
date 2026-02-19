@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Project 1 — AI-assisted Eldercare | Case Study</title>
+  <title>Project 1: AI-assisted Eldercare | Case Study</title>
   <meta name="description" content="Case study: AI-assisted eldercare app — from research to usability testing and final screens." />
   <link rel="stylesheet" href="../styles.css" />
 </head>
@@ -99,21 +99,25 @@
           <div class="callout span-full">
             <h3>Problem</h3>
             <p>
-              Caregiving documentation is inconsistent and disjointed, families, caregivers, and clinicians lack shared visibility. Early health changes often go unnoticed, leading to unmanaged symptoms and preventable hospitalizations.                
-            </p>
+              <ul>
+                <li> Caregiving documentation is inconsistent and disjointed, families, caregivers, and clinicians lack shared visibility. 
+                <li>Early health changes often go unnoticed, leading to unmanaged symptoms and preventable hospitalizations.</li>
+           
+              </ul>
+               </p>
               </ul>
           </div>
           
-          <div class="callout">
+          <!-- <div class="callout">
             <h3>Constraints</h3>
             <ul class="checklist">
              
               <li>Non-technical users with varying digital literacy</li>
               <li>Busy, time-constrained users</li>
             </ul>
-          </div>
-          <div class="callout">
-            <h3>Outcome</h3>
+          </div> -->
+          <div class="callout span-full">
+            <h3>Solution</h3>
             <ul class="checklist">
               <li>AI-powered caregiving documentation system for home care</li>
               <li>Design AI insights workflow</li>
@@ -161,7 +165,6 @@
           <div class="callout">
             <h3> Needs </h3>
             <ul>
-              
               <li>Quick capture for busy caregivers (voice input, templates)</li>
               <br><li>Reduce cognitive load for task tracking</li>
               <br><br><br><li>Simplified UI for users with varying digital literacy</li>
@@ -175,14 +178,9 @@
             “I use reminders for drugs and medications, notes for any side effects, and text messages for the family… it is hard to keep track of when things happened and even what happened that day… There is just too much information.”
           </p>
         </div>
+        </div>
         
 
-        <!-- <figure>
-          <div class="img-ph" role="img" aria-label="Research artifacts placeholder">
-            Insert research artifacts (notes, interview snippets, survey summary, affinity map photo).
-          </div>
-          <figcaption>Research artifacts (keep sensitive info anonymized).</figcaption>
-        </figure> -->
       </section>
 
       <!-- 3) Synthesis -->
@@ -212,8 +210,13 @@
         </div>
 
         <figure class = img>
-          <img src="../img/affinity-map.png" alt="Affinity map showing actions, phases, opportunities, and emotions from user research" loading ="lazy">
-        <figcaption>Affinity map showing actions, phases, opportunities, and emotions from user research</figcaption>
+          <img src="../img/journey-map.png" alt="User Journey App showing actions, phases, opportunities, and emotions from user research" loading ="lazy">
+        <figcaption>User Journey Map showing actions, phases, opportunities, and emotions from user research</figcaption>
+        </figure>
+
+        <figure class = img>
+          <img src="../img/features.png" alt="App Features, designed from user needs" loading ="lazy">
+        <figcaption>Features showing features of app: voice feature, AI Insights, Document Capsule</figcaption>
         </figure>
       </section>
 
@@ -243,13 +246,28 @@
           </div>
         </div>
 
-        <figure>
-          <div class="img-ph" role="img" aria-label="Sketches or wireframes placeholder">
-            Add sketches / low-fi wireframes (2–6 panels) showing exploration.
-          </div>
-          <figcaption>Exploration (low-fi concepts → selected direction).</figcaption>
+         <figure class = img>
+          <img src = "../img/low-fid.png" alt="Low fidelity wireframes showing user flows and interface concepts" loading ="lazy">
+        <figcaption>Low-fidelity wireframes showing user flows and interface concepts.</figcaption>
         </figure>
-      </section>
+
+        </section>
+        
+
+
+        <!-- <figure class="figma-figure">
+          <div class="figma-wrap" aria-label="Figma embed: Ideation screens" role="group" tabindex="0">
+            <iframe 
+              style="border: 1px solid rgba(0, 0, 0, 0.1);" 
+              width="800" height="450"
+              
+             src="https://embed.figma.com/design/Cz82F0EKBscGDUDyLCXcgg/Untitled?node-id=0-1&embed-host=share"
+             allowfullscreen></iframe>
+          </div>
+          <figcaption>Figma: Ideation screens (interactive)</figcaption>
+        </figure> -->
+
+       
 
       <!-- 5) Information Architecture -->
       <section id="ia" aria-labelledby="h-ia">
@@ -279,7 +297,7 @@
               <li> Assessment </li>
             </ul>
           </div>
-          <div class="callout">
+          <div class="callout span-full">
             <h3>Core Flows</h3>
             <ul class="checklist">
               <li>Start voice entry → transcript → edit → save</li>
@@ -289,13 +307,14 @@
           </div>
         </div>
 
-        <figure>
+        <!-- <figure>
           <div class="img-ph" role="img" aria-label="Site map or user flow diagram placeholder">
             Add a sitemap / IA diagram or key user flow (ideal: 1–2 diagrams).
           </div>
           <figcaption>IA + flows (how users move through the experience).</figcaption>
-        </figure>
-      </section>
+        </figure>-->
+        </section>  
+
 
       <!-- 6) Final Screens -->
       <section id="final" aria-labelledby="h-final">
@@ -304,68 +323,93 @@
           Present your strongest screens with short captions explaining the “why.” Keep it visual and scannable.
         </p>
 
-        <div class="grid-2">
+        <div class="grid">
+
           <figure>
-            <div class="img-ph" role="img" aria-label="Final screen placeholder: Voice journaling">
-              Final Screen 1: Voice Journaling (add screenshot)
+            <div class="img-ph" role="img" aria-label="Final screen placeholder: Tasks">
+              Final Screen 1: Tasks Documentation
             </div>
-            <figcaption>Voice journaling with live transcription and clear edit affordances.</figcaption>
+            
+            <figure class = img>
+              <img src = "../img/Task_Documentation_2.png" alt="Low fidelity wireframes showing user flows and interface concepts" loading ="lazy">
+            <figcaption>Task tracking designed for quick updates and shared visibility.</figcaption>
+            </figure>
           </figure>
 
           <figure>
-            <div class="img-ph" role="img" aria-label="Final screen placeholder: Entry review">
-              Final Screen 2: Entry Review (add screenshot)
+            <div class="img-ph" role="img" aria-label="Final screen placeholder: Voice journaling">
+              Final Screen 2: Voice Journaling
             </div>
-            <figcaption>Review and edit entries with timestamps, tags, and quick actions.</figcaption>
+
+
+            <figure class = img>
+              <img src = "../img/voice_journal.png" alt="Voice journaling final screen showing live transcription and edit affordances" loading ="lazy">
+            <figcaption>Voice journaling with live transcription and clear edit affordances.</figcaption>
+            </figure>
           </figure>
 
           <figure>
             <div class="img-ph" role="img" aria-label="Final screen placeholder: Insights">
-              Final Screen 3: AI Insights (add screenshot)
+              Final Screen 3: AI Insights
             </div>
-            <figcaption>Insights summarize trends with transparent links back to source entries.</figcaption>
-          </figure>
 
+            <figure class = img>
+              <img src = "../img/AI_insights_final.png" alt="AI Insights final screen showing summary of trends and links back to source entries" loading ="lazy">
+            <figcaption>AI Insights final screen showing summary of trends and links back to source entries.</figcaption>
+            </figure>
+
+          </figure> 
+
+
+          
+      
           <figure>
-            <div class="img-ph" role="img" aria-label="Final screen placeholder: Tasks">
-              Final Screen 4: Tasks / Care Plan (add screenshot)
-            </div>
-            <figcaption>Task tracking designed for quick updates and shared visibility.</figcaption>
+          <div class="img-ph" role="img" aria-label="Final screen placeholder: Insights">
+            Final Screen 4: Document Capsule
+          </div>
+          <figure class = img>
+              <img src = "../img/docu_final.png" alt="Document Capsule final screen showing summary of trends and links back to source entries" loading ="lazy">
+              <figcaption>Document Capsule final screen showing summary of trends and links back to source entries.</figcaption>
           </figure>
-        </div>
-      </section>
 
+           </figure>
+
+        </div>
+          
+        </section>
       <!-- 7) Usability Testing -->
       <section id="testing" aria-labelledby="h-testing">
         <h2 id="h-testing">Usability Testing</h2>
         <p class="lede">
-          Recruiters love this section. Be specific: what you tested, what you measured, and what you changed.
-        </p>
+          conducted A/B testing on voice journal screens.</p>
 
         <div class="grid-2">
           <div class="callout">
             <h3>Test Plan</h3>
             <ul class="checklist">
-              <li>Participants: n=__ (caregivers / target users)</li>
+              <li>Participants: n= 10 caregivers</li>
               <li>Prototype: mid/high-fi interactive</li>
-              <li>Tasks: log entry, edit, find entry, interpret insight</li>
+              <li>Tasks: find entry, log entry, edit entry, confirm,</li>
             </ul>
           </div>
           <div class="callout">
             <h3>Key Iterations</h3>
             <ul class="checklist">
-              <li>Improved transcript editing visibility</li>
-              <li>Clarified save states + confirmations</li>
-              <li>Reduced cognitive load in insights layout</li>
+              <li>improved visual hierarchy and prompting</li>
+              <li>reduce work load of task documentation</li>
+              <li>improved level of details in documenting caregiving tasks</li>
             </ul>
           </div>
         </div>
 
         <figure>
           <div class="img-ph" role="img" aria-label="Before-and-after iteration placeholder">
-            Add before/after screens showing iterations based on testing.
+            Voice Journal iterations based on testing.
           </div>
-          <figcaption>Testing-driven iteration (show the change and the reason).</figcaption>
+            <figure class = img>
+                <img src = "../img/voice journal revisions.png" alt="design changes of voice journal screen from usability testing feedback" loading ="lazy">
+              </figure>
+          <figcaption>Too cluttered -> misleading buttons -> too much text -> final</figcaption>
         </figure>
       </section>
 
@@ -373,7 +417,6 @@
       <section id="reflection" aria-labelledby="h-reflection">
         <h2 id="h-reflection">Reflection</h2>
         <p class="lede">
-          Close with growth + product thinking. Keep it honest, crisp, and forward-looking.
         </p>
 
         <div class="grid-2">
