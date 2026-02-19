@@ -193,7 +193,9 @@ a:hover { text-decoration: none; }
 }
 
 .hero-card {
-  border: 2px solid #111;
+  width: 80%;
+
+  border: 2px solid #66c8f6;
   border-radius: 18px;
   padding: 1rem;
   background: #fff;
@@ -201,9 +203,8 @@ a:hover { text-decoration: none; }
 
 .avatar {
   width: 100%;
-  aspect-ratio: 1 / 1;
-  border-radius: 14px;
-  border: 2px solid #111;
+  border-radius: 20px;
+  border: 2px solid #a3cbdd;
   background: linear-gradient(135deg, #f2f2f2, #e7e7e7);
   margin-bottom: 0.75rem;
 }
