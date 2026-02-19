@@ -1,7 +1,358 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project 2: Mental Health Landing Website </title>
-    <link rel="stylesheet" href="../style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Project 2: Disability-Centered Encyclopedia| Case Study</title>
+  <meta name="description" content="Case study: Disability-centered encyclopedia — from research to usability testing and final screens." />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+
+
+<body>
+  <!-- Top bar -->
+  <header class="topbar" role="banner">
+    <div class="container topbar-inner">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a>
+        <span aria-hidden="true">/</span>
+        <a href="../index.html#projects">Projects</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">Project 2</span>
+      </nav>
+
+      <div class="actions" aria-label="Page actions">
+        <a class="btn" href="../index.html#projects">All projects</a>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <h1>Criptionary — Disability-Centered Encyclopedia</h1>
+        <p class="subtitle">
+           a tool to better understand the depth and breadth of disability studies and advocacy. </p>
+
+        <div class="tags" aria-label="Project tags">
+          <span class="tag">Website</span>
+          <span class="tag">Accessibility-first</span>
+        </div>
+      </div>
+        <aside class="meta" aria-label="Project overview summary">
+          <!-- <dl>
+            <dt>Project</dt>
+            <dd>AI-powered caregiving documentation system for elderly home care </dd>
+          </dl> -->
+          <dl>
+            <dt>Role</dt>
+            <dd>Lead UX/UI Designer</dd>
+          </dl>
+          <dl>
+            <dt>Timeline</dt>
+            <dd>Nov 2024 - Feb 2025</dd>
+          </dl>
+          <dl>
+            <dt>Team</dt>
+            <dd>2 UIUX Designers, 2 Back-end engineer, 1 Project Manager</dd>
+          </dl>
+          <dl>
+            <dt>Tools</dt>
+            <dd>Figma, Adobe Illustrator, HTML, CSS, React</dd>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+
+  <!-- Content layout -->
+  <div class="container layout">
+    <!-- TOC -->
+    <nav class="toc" aria-label="Case study sections">
+      <h2>Process</h2>
+      <ol>
+        <li><a href="#overview">Project Overview</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#synthesis">Synthesis</a></li>
+        <li><a href="#ideation">Ideation / Exploration</a></li>
+        <li><a href="#ia">Information Architecture</a></li>
+        <li><a href="#final">Final Screens</a></li>
+        <li><a href="#testing">Usability Testing</a></li>
+        <li><a href="#reflection">Reflection</a></li>
+      </ol>
+    </nav>
+
+    <!-- MAIN -->
+    <main id="main" tabindex="-1">
+      <!-- 1) Project Overview -->
+      <section id="overview" aria-labelledby="h-overview">
+        <h2 id="h-overview">Project Overview</h2>
+        <div class="grid-2">
+          <div class="callout span-full">
+            <h3>Problem</h3>
+            <p>
+                Envisioned to be a comprehensive online database, Criptionary aims to be a centralized space to document and spotlight disability concepts, distinguished visionaries, and pioneering advocates. 
+                More than a passive dictionary, it is a living wiki, constantly evolving by a community anchored in disability advocacy. 
+
+            </p>
+            
+          </div>
+          
+      </section>
+
+      <!-- 2) Research -->
+      <section id="research" aria-labelledby="h-research">
+        <h2 id="h-research">Research</h2>
+        <div class="grid-2">
+          <div class="callout span-full">
+           <h3>Methods</h3>
+            <ul class="checklist">
+                <li>Google Survey Form (n=24 people)</li>
+                <li>Interviews with disability community members from UC Berkeley Lab (n=10)</li>
+            </ul>
+          </div>
+          <div class="callout">
+            <h3> Pain Points </h3>
+            <figure class = img>
+              <img src="../img/project-2/user_issues.png" alt="Key pain points from user research" loading ="lazy">
+            </figure>
+          </div>
+          <div class="callout">
+            <h3> Needs </h3>
+             <figure class = img>
+              <img src="../img/project-2/user_wants2.png" alt="Key needs from user research" loading ="lazy">
+            </figure>
+          </div>
+         <div class="callout span-full">
+          <h3>Key user quote</h3>
+          <p style="margin:0; font-style:italic;">
+            “I get conflicting or vague information, and no one clearly explains what I actually need to do to get a diagnosis or access resources.”</p>
+        </div>
+        </div>
+        
+
+      </section>
+
+     
+      <section id="ideation" aria-labelledby="h-idea">
+        <h2 id="h-idea">Ideation</h2>
+      
+
+        <div class="grid-2">
+          <div class="callout">
+            <h3>Themes</h3>
+            <ul class="checklist">
+              <li>easy navigation and searchability</li>
+              <br><br><br><li>want accurate, specific information</li>
+              <br><li> accessibility-friendly website layout and navigation</li>
+              
+            </ul>
+          </div>
+          <div class="callout">
+            <h3>Design Principles</h3>
+            <ul class="checklist">
+              <li>Navigation Bar – Menu option with key sections, such as About, Glossary Term section, section for inspiring News/Stories of advocates with disability, Contact</li>
+              <li>Profile Login - community-based and collaborative editing for up-to-date, accurate information</li>
+              <li>Responsive design, contrast color palettes, scalable dyslexic-friendly fonts, and more.</li>
+            </ul>
+          </div>
+        </div>
+
+        <figure class = img>
+          <img src="../img/project-2/low2.png" alt="Low-fidelity wireframes showing user flows and interface concepts" loading ="lazy">
+          <figcaption>Low-fidelity wireframes showing user flows and interface concepts.</figcaption>
+        </figure>
+        </section>
+
+
+      <section id="Explore" aria-labelledby="h-explore">
+        <h2 id="h-explore">Exploration (Iterations)</h2>
+       
+        <div class="grid-2">
+          <div class="callout">
+            <h3>Issues</h3>
+            <ul class="checklist">
+              <li>Main Page is too cluttered,  contributing to cognitive overload, overwhelming users and reducing focus.  </li>
+              <li>Too much features in one scan results in complex navigation, as screen readers process content sequentially. </li>
+              <li>Having too much text, links, and content in one page results in difficult  screen reader and keyboard navigation. </li>
+            </ul>
+          </div>
+          <div class="callout">
+            <h3>Decision Rationale</h3>
+            <ul class="checklist">
+              <li> Less Content – display essential information, and the rest is hidden away. </li>
+              <li>Sequential / Scrolling Items  – reduce cognitive load, easier navigation, greater accessibility for screen readers.  </li>
+              <li>Reduced Sections to only Glossary to improve MVP mission and introduction of too many features.  </li>
+            </ul>
+          </div>
+        </div>
+
+         <figure class = img>
+          <img src = "../img/project-2/iterations.png" alt="design iterations showing changes in layout and content density" loading ="lazy">
+          <figcaption>Design iterations showing changes in layout and content density.</figcaption>
+        </figure>
+
+        </section>
+        
+
+<!--        
+
+      5) Information Architecture 
+      <section id="ia" aria-labelledby="h-ia">
+        <h2 id="h-ia">Information Architecture</h2>
+        <p class="lede">
+         System thinking: navigation, content model, and user flows.
+        </p>
+
+        <div class="grid-2">
+          <div class="callout">
+            <h3>Primary Navigation</h3>
+            <ul class="checklist">
+              <li>Home / Today</li>
+              <li>Journal</li>
+              <li>Insights</li>
+              <li>Tasks / Care plan</li>
+            </ul>
+          </div>
+          <div class = "callout">
+            <h3> Content Structure</h3>
+            <ul class="checklist">
+              <li>Nutrition</li>
+              <li>Medication</li>
+              <li> Personal Care</li>
+              <li> Activities</li>
+              <li> Sleep and Rest</li>
+              <li> Assessment </li>
+            </ul>
+          </div>
+          <div class="callout span-full">
+            <h3>Core Flows</h3>
+            <ul class="checklist">
+              <li>Start voice entry → transcript → edit → save</li>
+              <li>Review entries → filter/search → share</li>
+              <li>Insights → drill down to supporting entries</li>
+            </ul>
+          </div>
+        </div> -->
+
+        <!-- <figure>
+          <div class="img-ph" role="img" aria-label="Site map or user flow diagram placeholder">
+            Add a sitemap / IA diagram or key user flow (ideal: 1–2 diagrams).
+          </div>
+          <figcaption>IA + flows (how users move through the experience).</figcaption>
+        </figure>
+    </section> 
+        -->
+         
+
+
+      <!-- 6) Final Screens -->
+      <section id="final" aria-labelledby="h-final">
+        <h2 id="h-final">Final Screens</h2>
+       
+        <div class="split-grid">
+            <div class="left-image">
+                <figure class = img>
+                    <img src = "../img/project-2/Main Page.png" alt="Home Page final screen showing task tracking and shared visibility" loading ="lazy">
+                    <figcaption>Home Page with scrollable features and compartmentalized term organization</figcaption>
+                </figure>
+             </div>
+            <div class="right-boxes">
+            
+                <figure class = img>
+                    <img src = "../img/project-2/About Page.png" alt="About Page screen describing criptionary's mission and purpose" loading ="lazy">
+                    <figcaption>About Page with description of criptionary's mission and purpose</figcaption>
+                </figure> 
+                <figure class = img>
+                    <img src = "../img/project-2/Midfi Outline Categories.png" alt="Midfi Outline Categories screen showing the structure of the glossary" loading ="lazy">
+                    <figcaption>Midfi Outline Categories screen showing the structure of the glossary</figcaption>
+                </figure> 
+                <figure class = img>
+                        <img src = "../img/project-2/Glossary Word EXAMPLE -- Accessible Information Technology.png" alt="Glossary Word Example screen showing detailed information about a specific term" loading ="lazy">
+                        <figcaption>Glossary Word Example screen showing detailed information about a specific term</figcaption>
+                    </figure>
+            </div>
+        </div>
+        </section>
+
+
+      <!-- 8) Design Elements -->
+      <section id="de" aria-labelledby="h-de">
+        <h2 id="h-de">Design Elements</h2>
+
+        <div class="grid-2">
+        
+          <div class="callout">
+            <h3>Colors</h3>
+            <ul class="checklist">
+              <li>explored blue color palettes for calm, universal color </li>
+              <li>tested color-blind friendliness by checking with Adobe Color-Blind Feature and converted colors into grayscale to analyze the contrast. </li>
+              <li>decided Blue/Yellow/Orange color palette for better diversity in color. </li>
+            </ul>
+          </div>
+          <div class="callout">
+            <h3>Typeface</h3>
+            <ul class="checklist">
+             <li>explored dyslexic-friendly fonts, including Open-Dyslexic, a typeface specifically designed to reduce dyslexic symptoms.</li>
+             <li>chose a round-type typeface; Arvo for a bold heading and Poppins semibold for paragraph, subheader.</li>
+            </ul>
+          </div>
+        </div>
+          <div class="grid-2">
+                <figure class = img>
+                    <img src = "../img/project-2/co.png" alt="color-blind friendly palette showing blue, yellow, and orange colors" loading ="lazy">
+                    <figcaption>Color-blind friendly Palette</figcaption>
+                </figure>
+
+                <figure class = img>
+                <img src = "../img/project-2/typeface.png" alt="typeface exploration">
+                <figcaption>Typeface exploration</figcaption>
+                </figure>
+            </div>
+      </section>
+     
+      <!-- 8) Reflection -->
+      <section id="reflection" aria-labelledby="h-reflection">
+        <h2 id="h-reflection">Reflection</h2>
+        <p class="lede">
+        </p>
+
+        <div class="grid-2">
+          <div class="callout">
+            <h3>What went well</h3>
+            <ul class="checklist">
+              <li>Designed for accessibility and usability</li>
+              <li>Explored many common accessibility issues and solutions</li>
+              <li>Simplified designs for fast engineering implementation</li>
+            </ul>
+          </div>
+          <div class="callout">
+            <h3>What I’d improve next</h3>
+            <ul class="checklist">
+              <li>Expand collaborative editing + personalization</li>
+              <li>Support editing review and version history for accuracy and accountability</li>
+              <li>Greater accessibility features and considerations</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer navigation (optional, but recruiter-friendly) -->
+      <div class="footer-nav" aria-label="Project navigation">
+
+        <a href="../index.html#projects">
+          <div class="label"> See More </div>
+          <div class="title">All Projects</div>
+        </a>
+
+        <a href="project-33.html">
+          <div class="label"> Next project</div>
+          <div class="title">Project 3</div>
+        </a>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
