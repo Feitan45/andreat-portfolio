@@ -696,6 +696,15 @@ figcaption{
   border-top: 1px solid var(--border);
 }
 
+
+.video-demo {
+  display: block;
+  max-width: 300px;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
 .checklist{
   margin: 0;
   padding-left: 18px;

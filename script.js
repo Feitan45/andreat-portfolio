@@ -17,6 +17,22 @@ if (toggleBtn && nav) {
     }
   });
 }
+// Video autoplay on scroll (handles multiple videos)
+const videos = document.querySelectorAll('.video-demo');
+videos.forEach(video => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        video.play();
+      } else {
+        video.pause();
+      }
+    });
+  }, { threshold: 0.5 }); // Plays when 50% of the video is visible
+  observer.observe(video);
+});
+
+
 
 // Footer year
 const yearEl = document.getElementById("year");
